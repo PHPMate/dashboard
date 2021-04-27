@@ -1,6 +1,7 @@
 {
 	"name": "phpmate/dashboard",
-	"type": "project",
+    "description": "",
+    "type": "project",
 	"license": ["MIT"],
 	"require": {
 		"php": ">= 8.0",
@@ -19,12 +20,17 @@
 		"tracy/tracy": "^2.8"
 	},
 	"require-dev": {
-		"phpstan/phpstan": "^0.12.84"
+        "roave/security-advisories": "dev-latest",
+        "phpstan/phpstan": "^0.12.84"
 	},
 	"autoload": {
 		"psr-4": {
 			"PHPMate\\Dashboard\\": "src"
 		}
 	},
-	"minimum-stability": "stable"
+	"minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "phpstan": "vendor/bin/phpstan analyse"
+    }
 }

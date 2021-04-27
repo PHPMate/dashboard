@@ -1,0 +1,22 @@
+version: "3.7"
+services:
+    web:
+        image: phpmate-dashboard
+        build: .
+        volumes:
+            - .:/var/www
+        working_dir: /var/www
+        depends_on:
+            - composer
+        ports:
+            - 8080:8080
+        command: [ "php", "-S", "0.0.0.0:8080", "-t", "public" ]
+
+    composer:
+        image: phpmate-dashboard
+        build: .
+        volumes:
+            - .:/var/www
+        working_dir: /var/www
+        entrypoint: "composer"
+        command: [ "install", "--no-interaction" ]
