@@ -4,7 +4,7 @@ parameters:
 application:
 	errorPresenter: Error
 	mapping:
-		*: [App, Modules\*, Presenters\*Presenter]
+		*: [PHPMate\Dashboard, Modules\*, Presenters\*Presenter]
 
 
 session:
