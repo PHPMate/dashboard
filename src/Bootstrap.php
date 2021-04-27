@@ -13,7 +13,11 @@ class Bootstrap
 	{
 		$configurator = new Configurator;
 
-		$configurator->enableTracy(__DIR__ . '/../var/log');
+        $configurator->enableTracy(__DIR__ . '/../var/log');
+
+		if (isset($_ENV['APP_DEBUG']) && (bool) $_ENV['APP_DEBUG'] === true) {
+		    $configurator->setDebugMode(true);
+        }
 
 		$configurator->setTimeZone('Europe/Prague');
 		$configurator->setTempDirectory(__DIR__ . '/../var/cache');
