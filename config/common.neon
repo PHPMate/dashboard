@@ -2,20 +2,20 @@ parameters:
 
 
 application:
-	errorPresenter: Error
-	mapping:
-		*: [PHPMate\Dashboard, Modules\*, Presenters\*Presenter]
+    errorPresenter: Error
+    mapping:
+        *: [PHPMate\Dashboard, Modules\*, Presenters\*Presenter]
 
 
 session:
-	expiration: 14 days
+    expiration: 14 days
 
 
 di:
-	export:
-		parameters: no
-		tags: no
+    export:
+        parameters: no
+        tags: no
 
 
 services:
-	- PHPMate\Dashboard\Router\RouterFactory::createRouter
+    - PHPMate\Dashboard\Router\RouterFactory::createRouter
